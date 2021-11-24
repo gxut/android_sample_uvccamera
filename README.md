@@ -2,14 +2,6 @@
 android sample of uvccamera,
 developed based on the [saki4510t/UVCCamera][1]
 
-### Image
-<img src="doc/img/screenshot_1.png" width="200px"/> <img src="doc/img/screenshot_2.png" width="200px"/> <img src="doc/img/screenshot_3.png" width="200px"/>
-
-### Sample
-| <img src="doc/img/android_logo.png" width="260px" /> |
-| :--------:                      |
-| Scan QR code or [Download][2]   |
-
 ### Add Function
 
 * 1-Add `UVCCamera` API with `setPreviewRotate(int rotate)`;
@@ -84,17 +76,4 @@ void UVCPreview::do_capture_callback(JNIEnv *env, uvc_frame_t *frame) {
 * NDK: ndk-r14b
 * CMake
 
-### About Author:
-* Author: shengjunhu
-* Date  : 2020/5/1
-* E-Mail: shengjunhu@foxmail.com
-* GitHub: https://github.com/hushengjun
-
-### About License
-```
-Copyright (c) 2020 shengjunhu
-Please compliance with the UVCCamera license
-```
-
 [1]: https://github.com/saki4510t/UVCCamera
-[2]: https://github.com/shengjunhu/android_sample_uvccamera/raw/master/doc/apk/sample_usbcamera_v21040619_release.apk
