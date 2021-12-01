@@ -58,18 +58,14 @@ int UVCPreview::stopPreview() {
 }
 ```
 
-* 3-fix NullPointerException for `do_capture_callback()` of `UVCPreview.cpp`
+* 3-fix NullPointerException for `stopPreview()` of `UVCCamera.java`
 ```cpp
-void UVCPreview::do_capture_callback(JNIEnv *env, uvc_frame_t *frame) {
-    ...
-    //mFrameCallbackObj or iframecallback_fields.onFrame maybe null
-    if (isCapturing()) {
-        jobject buf = env->NewDirectByteBuffer(callback_frame->data, callbackPixelBytes);
-        env->CallVoidMethod(mFrameCallbackObj, iframecallback_fields.onFrame, buf);
-        env->DeleteLocalRef(buf);
+public synchronized void stopPreview() {
+        if (mCtrlBlock != null) {
+            nativeStopPreview(mNativePtr);
+        }
+        setFrameCallback(null, 0);
     }
-    ...
-}
 ```
 
 ### About Build
